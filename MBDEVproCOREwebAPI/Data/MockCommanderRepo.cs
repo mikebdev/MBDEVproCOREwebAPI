@@ -8,7 +8,7 @@ namespace MBDEVproCOREwebAPI.Data
 {
     public class MockCommanderRepo : ICommanderRepo
     {
-        public IEnumerable<Command> GetAppCommands()
+        public IEnumerable<Command> GetAllCommands()
         {
             var commands = new List<Command> {
                 new Command { Id = 0, HowTo = "Code an API", Line = ".NET CORE", Platform = "WebAPI and JSON" },

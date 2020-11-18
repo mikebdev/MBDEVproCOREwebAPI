@@ -31,7 +31,11 @@ namespace MBDEVproCOREwebAPI
 
             services.AddControllers();
 
-            services.AddScoped<ICommanderRepo, MockCommanderRepo>();
+            //Mock Data
+            //services.AddScoped<ICommanderRepo, MockCommanderRepo>();
+
+            //Sql Server Data
+            services.AddScoped<ICommanderRepo, SqlCommanderRepo>();
         }
 
 
