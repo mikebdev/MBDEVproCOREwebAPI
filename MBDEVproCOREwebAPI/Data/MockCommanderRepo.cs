@@ -8,6 +8,11 @@ namespace MBDEVproCOREwebAPI.Data
 {
     public class MockCommanderRepo : ICommanderRepo
     {
+        public void CreateCommand(Command cmd)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Command> GetAllCommands()
         {
             var commands = new List<Command> {
@@ -21,6 +26,11 @@ namespace MBDEVproCOREwebAPI.Data
         public Command GetCommandById(int id)
         {
             return new Command{ Id = 0, HowTo = "Code an API", Line = ".NET CORE", Platform = "WebAPI and JSON" };
+        }
+
+        public bool SaveChanges()
+        {
+            throw new NotImplementedException();
         }
     }
 }

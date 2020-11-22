@@ -1,3 +1,4 @@
+using AutoMapper;
 using MBDEVproCOREwebAPI.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,6 +31,8 @@ namespace MBDEVproCOREwebAPI
             services.AddDbContext<CommanderContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("CommanderConnection")));
 
             services.AddControllers();
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             //Mock Data
             //services.AddScoped<ICommanderRepo, MockCommanderRepo>();

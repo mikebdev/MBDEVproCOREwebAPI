@@ -15,13 +15,22 @@ namespace MBDEVproCOREwebAPI.Data
             _context = context;
         }
 
+        public void CreateCommand(Command cmd)
+        {
+            throw new NotImplementedException();
+        }
 
-        IEnumerable<Command> ICommanderRepo.GetAllCommands()
+        public bool SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Command> GetAllCommands()
         {
             return _context.Commands.ToList();
         }
 
-        Command ICommanderRepo.GetCommandById(int id)
+        public Command GetCommandById(int id)
         {
             return _context.Commands.FirstOrDefault(p => p.Id == id);
         }
