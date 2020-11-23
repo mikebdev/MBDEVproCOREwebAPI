@@ -17,12 +17,12 @@ namespace MBDEVproCOREwebAPI.Data
 
         public void CreateCommand(Command cmd)
         {
-            throw new NotImplementedException();
-        }
+            if(cmd == null)
+            {
+                throw new ArgumentNullException(nameof(cmd));
+            }
 
-        public bool SaveChanges()
-        {
-            throw new NotImplementedException();
+            _context.Commands.Add(cmd);
         }
 
         public IEnumerable<Command> GetAllCommands()
@@ -33,6 +33,10 @@ namespace MBDEVproCOREwebAPI.Data
         public Command GetCommandById(int id)
         {
             return _context.Commands.FirstOrDefault(p => p.Id == id);
+        }
+        public bool SaveChanges()
+        {
+            return (_context.SaveChanges() >= 0);
         }
     }
 }
