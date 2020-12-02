@@ -16,5 +16,9 @@ namespace MBDEVproCOREwebAPI.Data
 
         void CreateCommand(Command cmd);
 
+        void UpdateCommand(Command cmd);
+
+        void DeleteCommand(Command cmd);
+
     }
 }
